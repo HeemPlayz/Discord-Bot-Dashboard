@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title><%= client.user.username %> - Dashboard</title>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="index.js"></script>
+        <% let format = ".png" || ".gif" || ".jpg" || ".jpeg"; %>
+        <link rel="icon" href="https://cdn.discordapp.com/avatars/<%= client.user.id %>/<%= client.user.avatar %><% format %>?size=2048">
+
+
+        
+
+
+    </head>
+
+    <body>
+
+        <ul>
+<li><a class="tabs" href="/">Home</a></li>
+<% if(!user) { %>
+<li style="float: right;"><a class="tabs" style="color:lawngreen;" href="/login">Login</a></li>
+<% } else { %>
+    <li><a class="tabs" style="color: red;" href="/logout">Logout</a></li>
+    <li style="float: right;"><a class="tabs" href="#"><%= user.username %></a></li>
+    <li style="float: right;"><img class="avatar" style=" border-radius: 50%; padding: 8px 16px;" width="50px" height="50px" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %><% format %>?size=2048"></li>
+<% } %>
+        </ul>
+
+<center>
+    <img style="width: 150px; height: 150px; border-radius: 50%;" src="https://cdn.discordapp.com/avatars/<%= client.user.id %>/<%= client.user.avatar %><% format %>?size=2048">
+    <h1 style="color: white;"><%= client.user.username %></h1>
+    <p style="color: white;">Bot description</p>
+
+    <div class="col-sm-4">
+            <h5 style="color: #75706f" class="server-details">Guilds</h5>
+            <code><p class="server-info"><%= client.guilds.cache.size %></p></code>
+          </div>
+          <div class="col-sm-4">
+      <h5 style="color: #75706f" class="server-details">Channels</h5>
+            <code><p class="server-info"><%= client.channels.cache.size %></p></code>
+          </div>
+          <div class="col-sm-4">
+            <h5 style="color: #75706f" class="server-details">Users</h5>
+            <code><p class="server-info"><%= client.users.cache.size %></p></code>
+                  
+
+</center>
+
+
+<footer>
+    <p>Made by <span style="color: turquoise;">HeemPlayz#8342</span></p>
+</footer>
+
+    </body>
+
+</html>

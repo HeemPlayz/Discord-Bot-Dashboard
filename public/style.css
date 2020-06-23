@@ -1,0 +1,54 @@
+body{
+    background-color: #241b29;
+    font-family: Comic Sans MS;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 12px;
+    height: 4pc;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.222223pc;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover:not(.avatar) {
+    background-color: #111;
+  }
+
+.tabs{
+    padding: 18px 16px;
+}
+
+.col-sm-4{
+    display: inline-block;
+   font-size: 1.222pc;
+   margin: 1pc;
+}
+
+code{
+    color: white;
+}
+
+footer{
+    background-color: black;
+    box-shadow: gray;
+    color: white;
+    font-size: 1.111112pc;
+    text-align: center;
+    padding: 3px;
+    margin-top: 20%;
+}
