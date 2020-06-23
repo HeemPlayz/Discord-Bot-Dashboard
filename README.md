@@ -14,9 +14,9 @@ Fill all the details in `config.json`
     "secret": "Bot's Secret"
 }
 ```
-`token`: Put the token here (Only you can have it, don't give it to any user)
-`id`: You bot's ID
-`secret`: Can be obtained in the developers page of discord
+`token`: Put the token here (Only you can have it, don't give it to any user)<br />
+`id`: You bot's ID<br />
+`secret`: Can be obtained in the developers page of discord<br />
 Note: all these can be obtained from https://discord.com/developers, and all these are important, any one of these isn't filled will make you have an error.
 
 After doing all these steps, you are good to go, just do `node server.js` and it will listen to port `3000` by default.
