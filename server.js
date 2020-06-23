@@ -23,14 +23,12 @@ const https = require('https');
 app.set("view engine", "ejs");
 const Discord = require("discord.js")
 const client = new Discord.Client();
-app.listen(3000); // Defualt 3000
-
-/*setInterval(() => { //Enable this if you want to run it 24/7
-  https.get(`Project URL`);
-}, 280000);*/
+app.listen(3000)
 
 
-
+client.on("ready", () => {
+	console.log("Ready!!")
+})
 
 
 
@@ -47,7 +45,7 @@ passport.deserializeUser((obj, done) => {
 passport.use(new Strategy({
 	clientID: config.id,
 	clientSecret: config.secret,
-	callbackURL: 'Website_URL/auth', // example: https://example.com/auth
+	callbackURL: 'http://localhost:3000/auth', // example: https://example.com/auth
 	scope: ['identify', 'guilds', 'guilds.join'] //don't touch
 },
 (accessToken, refreshToken, profile, done) => {
@@ -64,8 +62,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(helmet());
-app.locals.domain = 'WEBSITE_URL';
+app.locals.domain = 'http://localhost:3000';
 const bodyParser = require('body-parser');
+const { Console } = require("console");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
@@ -79,7 +78,7 @@ function checkAuth(req, res, next) {
 
 app.get('/login', (req, res, next) => {
 	if (req.session.backURL) {
-		req.session.backURL = 'Website_URL/auth'; // example: https://example.com/auth
+		req.session.backURL = 'http://localhost:3000/auth'; // example: https://example.com/auth
 	} else if (req.headers.referer) {
 		const parsed = url.parse(req.headers.referer);
 		if (parsed.hostname === app.locals.domain) {
@@ -112,7 +111,7 @@ app.get("/logout", function(req, res) {
   });
   
   
-  app.get('/', (req,res) => {
+  /*app.get('/', (req,res) => {
     const user = req.isAuthenticated() ? req.user : null;
     
   
@@ -132,7 +131,30 @@ app.get("/logout", function(req, res) {
      client: client
    })
 
-    })
+	})*/
+	
+	app.get('/', (req,res) => {
+		const user = req.isAuthenticated() ? req.user : null;
+		
+	  
+		const botStats = [{
+			botty: client,
+		perms: EvaluatedPermissions,
+			user: req.isAuthenticated() ? req.user : null
+		}];
+		 res.render("index", {
+			 
+			  client: client,
+			  bot: botStats,
+			  user,
+			  client: client
+			
+		  })
+		  
+		
+	  
+	
+		})
   
 
 client.login(config.token)
