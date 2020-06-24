@@ -2,6 +2,9 @@
 I made this open-source project for the usage of all people, it shows how you can use OAuth2 by Discord to use it as Bot dashboard
 It only has Login, and the bot details.
 
+## Note
+If you using it before 23 June, please delete it and re-install it, there was a problem in the project
+
 # Setup
 First of all, install all required packages in order to work, after installing them, you will need to change `config.json.sample` to `config.json`
 to make the file scan it,
