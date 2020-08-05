@@ -25,4 +25,4 @@ Note: all these can be obtained from https://discord.com/developers, and all the
 After doing all these steps, you are good to go, just do `node server.js` and it will listen to port `3000` by default.
 
 # Credits
-This website is fully made by `HeemPlayz#8342` and goes under `Apache 2.0` License, you can modify, publish it on your own in safe way, I do not take any responsibilites of miss using it, any problems or suggestions, feel free to open an issue to this repo.
+This website is fully made by `HeemPlayz#0001` and goes under `Apache 2.0` License, you can modify, publish it on your own in safe way, I do not take any responsibilites of miss using it, any problems or suggestions, feel free to open an issue to this repo.
