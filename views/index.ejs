@@ -23,7 +23,7 @@
 <% } else { %>
     <li><a class="tabs" style="color: red;" href="/logout">Logout</a></li>
     <li style="float: right;"><a class="tabs" href="#"><%= user.username %></a></li>
-    <li style="float: right;"><img class="avatar" style=" border-radius: 50%; padding: 8px 16px;" width="50px" height="50px" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %><% format %>?size=2048"></li>
+    <li style="float: right;"><img class="avatar" style=" border-radius: 50%; padding: 8px 16px;" width="50px" height="50px" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %><%= format %>?size=2048"></li>
 <% } %>
         </ul>
 
